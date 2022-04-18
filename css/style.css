@@ -209,12 +209,11 @@ p{
     margin: 0px auto;
 }
 
-/*Training*/
-.training-img{
-    max-width: 8rem; 
+/*Education*/
+.edu-img{
+    max-width: 7rem; 
     height: auto; 
-    position: relative; 
-    overflow: hidden; 
+    position: relative;
     margin: 1rem auto;
 }
 
