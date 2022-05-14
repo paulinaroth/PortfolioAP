@@ -3,9 +3,6 @@
     --primary-75:rgba(223,1,161,0.75);
     --secondary:#14192D;
     --secondary-85:rgba(45,35,57,0.85);
-    --secondary-10:rgba(45,35,57,0.1);
-    --tertiary:#501464;
-    --tertiary-75:rgb(80,20,100,0.75);
     --white:#fff;
     --light-grey:#f3f3f3;
     --grey:#ccc;
@@ -18,172 +15,131 @@
     --white:#fff;
     --black-50:rgba(0,0,0,0.5);
 
-    --gap: 5rem;
-
     --font:'Spartan', sans-serif;
 }
 html{
-    box-sizing: border-box;
-    font-size: 62.5%;
-    scroll-behavior: smooth;
-    font-family: var(--font);
-    font-size: 1.6rem;
-}
-*, *:before, *:after{
-    box-sizing: inherit;
-}
-body{
-    line-height: 1.5;
-    margin: 0;
+    font-family: var(--font) !important;
 }
 
 /* *******Globals******* */
 .contenedor{
     width: 90%;
     margin: 0 auto;
+    max-width: 120rem !important;
+}
+
+h1, h2, h3, h4, h5, h6, p, a{
+    font-family: var(--font);
+}
+h1, h2, h3{
+    font-weight: 700 !important;
+}
+h4, h5, h6, p, a{
+    font-weight: 400 !important;
 }
 
 a{
-    color: var(--accessories);
+    color: var(--secondary);
 }
 
-h1, h2, h3{
-    font-weight: 700;
-    font-family: var(--font);
-}
-h1{
-    color: var(--white);
-    padding-bottom: 2rem;
-}
-h2{
-    padding-bottom: .5rem;
-    display: inline-block;
-}
 
-img{
-    max-width: 100%;
-    display: block;
-    height: auto;
-}
-
-p{
-    line-height: 1.6rem;
-}
-
-.btn {
-    color: var(--white);
-    background-color: var(--primary);
-    border: 1px solid var(--gris);
-    padding: .5rem 1rem;
-    transition: background-color .3s;
-}
-.btn:hover {
-    background-color: var(--grey);
-    color: var(--dark3-grey);
-}
 
 /* ******* Utilities ******* */
-.box-shadow-1{
-    box-shadow: 0.25rem 0.25rem 1rem rgba(0,0,0,0.25);
-    margin: 1rem auto;
+.btn {
+    color: var(--white) !important;
+    background-color: var(--primary) !important;
 }
-@media (min-width: 992px){
-    .box-shadow-1{
-        margin: 1rem 0;
-    }
+.btn:hover {
+    background-color: var(--grey) !important;
+    color: var(--dark3-grey)!important;
 }
 
 .fa-solid{
     color: var(--primary);
 }
 
-.text-small{
-    font-size: 0.9rem;
+.background-grey{
+    background-color: var(--light-grey);
 }
-
-.undecorated-list{
-    margin: 0 auto;;
-    list-style: none;
-    padding: 1rem;
+.heading-lines{
+    display:inline-block;
+    position:relative;
+    margin-bottom: 3rem;
 }
-.undecorated-list li{
-    padding: 1rem;
-}
-
-.text-center{
-    text-align: center;
-}
-
-.underline{
-    background: linear-gradient(120deg, var(--white) 0%, var(--primary) 30%, var(--white-50) 100%) 20px 49px, linear-gradient(120deg, var(--white-50) 0%, var(--primary) 30%, var(--accessories) 100%) 60px 41px;
+.heading-lines::after, .heading-lines::before{
+    content: "";
+    position: absolute;
+    width: 7rem;
+    height: 0.4rem;
+   
     background-repeat: no-repeat;
-    background-size: 4rem 0.1em;
+
 }
-@media (min-width: 992px){
-    .underline{
-        background: linear-gradient(120deg, var(--white) 0%, var(--primary) 30%, var(--white-50) 100%) 20px 59px, linear-gradient(120deg, var(--white-50) 0%, var(--primary) 30%, var(--accessories) 100%) 60px 49px;background-repeat: no-repeat;
-        background-size: 4rem 0.1em;
-    }
+.heading-lines::before{
+     left: 0.7rem;
+     top: 3.5rem;
+     background: linear-gradient(120deg, transparent 0%, var(--primary) 30%, var(--accessories) 80%, transparent 100%);
+}
+.heading-lines::after{
+    left: 3.1rem;
+    top: 2.7rem;
+    background: linear-gradient(120deg, transparent 0%, var(--primary) 30%, transparent 100%);
 }
 
-.h1-underline{
-    background: linear-gradient(120deg, transparent 0%, var(--primary) 30%, transparent 100%) 5% 80%, linear-gradient(120deg, transparent 0%, var(--primary) 30%, transparent 100%) 70% 70%;
-    background-repeat: no-repeat;
-    background-size: 4rem 0.1em;
-}
-@media (min-width: 500px){
-    .h1-underline{
-        background: linear-gradient(120deg, transparent 0%, var(--primary) 30%, transparent 100%) 5% 82%, linear-gradient(120deg, transparent 0%, var(--primary) 30%, transparent 100%) 15% 72%;
-        background-repeat: no-repeat;
-        background-size: 4.5rem 0.1em;
-    }
-}
-.justify-end-center{
-    display: flex;
-    justify-content: flex-end;
-}
-@media (min-width: 642px){
-    .justify-end-center{
-        justify-content: center;
-    }
-}
 /* ******* Styles ******* */
 /* Header */
 .header {
-    min-height: 32rem;
+    min-height: 53rem;
     background-image: url(../assets/heroimg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position:  center;
 }
-@media (min-width: 992px){
-    .header{
-        min-height: 38rem;
-    }
-}
 
 .header-nav{
     background-color: var(--secondary-85);
     text-align: center;
-    margin-bottom: 7rem;
+    margin-bottom: 8rem;
 }
-@media (min-width: 642px){
-    .header-nav{
-        margin-bottom: 8rem;
-    }
+
+header h1{
+    color: var(--white);
+    margin-bottom: -1.3rem;
 }
+.header-lines{
+    display:inline-block;
+    position:relative;
+    margin-bottom: 3rem;
+}
+.header-lines::after, .header-lines::before{
+    content: "";
+    position: absolute;
+    width: 10rem;
+    height: 0.5rem;
+    background: linear-gradient(120deg, transparent 0%, var(--primary) 30%, transparent 100%);
+    background-repeat: no-repeat;
+}
+.header-lines::before{
+     left: 1rem;
+     top: 1.9rem;
+}
+.header-lines::after{
+    left: 3.5rem;
+    top: 0.9rem;
+}
+
 .header h3{
     color: var(--white);
 }
-@media (min-width: 642px){
-    .header h3{
-        font-size: 1.6rem;
-    }
-}
 
-/*About*/
-.about{
-    margin-top: 2rem;
+.justify-end-to-center{
+    display: flex;
+    justify-content: flex-end;
+}
+@media (min-width: 642px){
+    .justify-end-to-center{
+        justify-content: center;
+    }
 }
 
 /*Back*/
@@ -204,8 +160,9 @@ p{
 }
 
 /*Skills*/
-.tech-img{
+.sk-img{
     max-width: 5rem;
+    display: block;
     margin: 0px auto;
 }
 
@@ -219,22 +176,18 @@ p{
 
 /*Projects*/
 .card-height1{
-    height: 93%;
+    height: 95%;
 }
 
 /*Contact*/
-.contact-img{
+..contact-img{
     margin: 1rem auto 0 auto;
 }
 .card-height{
-    height: 85%;
+    height: 93%;
 }
 
 /*Footer*/
 .footer{
-    background-color: var(--tertiary);
-}
-.footer p{
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    background-color: var(--secondary);
 }
